@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GO DAGESTAN - Форма заявки</title>
+	<meta property="og:title" content="GO DAGESTAN - Форма заявки">
+	<meta property="og:description" content="Описание">
+	<meta property="og:url" content="/">
+	<meta property="og:site_name" content="GO DAGESTAN - Форма заявки">
+	<!-- favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
+	<!-- styles -->
+	<link rel="stylesheet" href="libs/aos/aos.css">
+	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
+	<link rel="stylesheet" href="css/app.min.css">
+</head>
+
+<body>
+	<!-- wrapper -->
+	<div class="wrapper">
+		<!-- header -->
+		<header class="header header--inner header--white" id="header">
+			<div class="container">
+				<div class="header__wrapper">
+					<a href="index.html" class="header__logotype">
+						<img class="default" src="img/logotype.svg" width="100" height="62" alt="GO DAGESTAN">
+						<img class="white" src="img/logotype-white.svg" width="100" height="62" alt="GO DAGESTAN">
+					</a>
+					<nav class="nav header__nav">
+						<ul class="nav__list">
+							<li class="nav__item">
+								<a href="tours.html" class="nav__link">Туры</a>
+							</li>
+							<li class="nav__item">
+								<a href="about.html" class="nav__link">О нас</a>
+							</li>
+							<li class="nav__item">
+								<a href="contacts.html" class="nav__link">Контакты</a>
+							</li>
+							<li class="nav__item">
+								<a href="application.html" class="nav__link">Связаться</a>
+							</li>
+						</ul>
+					</nav>
+					<a href="index.html" class="header__btn" aria-label="На главную">
+						<svg>
+							<use xlink:href="img/sprite.svg#icon-close"></use>
+						</svg>
+					</a>
+					<button class="hamburger" id="hamburger-toggle" aria-label="Меню">
+						<span class="hamburger__inner"></span>
+						<span class="hamburger__inner"></span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<!-- end of header -->
+		<!-- content -->
+		<div class="wrapper__content">
+			<!-- application -->
+			<div class="application" id="application">
+				<div class="container">
+					<div class="application__wrap">
+						<form action="#" class="application-form application__form">
+							<div class="input-field application-form__input">
+								<input type="text" class="input-field__input" placeholder="Имя">
+							</div>
+							<div class="input-field application-form__input">
+								<input type="text" class="input-field__input" placeholder="Телефон">
+							</div>
+							<div class="input-field application-form__input">
+								<textarea class="input-field__textarea" placeholder="Ваш вопрос"></textarea>
+							</div>
+							<button class="application-form__btn btn">Отправить</button>
+						</form>
+					</div>
+					<picture class="application__bg">
+						<img src="img/application-bg.jpg" alt="Image">
+					</picture>
+				</div>
+			</div>
+			<!-- end of application -->
+		</div>
+		<!-- end of content -->
+	</div>
+	<!-- end of wrapper -->
+	<!-- scripts -->
+	<script src="libs/inputmask/inputmask.min.js"></script>
+	<script src="libs/aos/aos.js"></script>
+	<script src="libs/swiper/swiper-bundle.min.js"></script>
+	<script src="js/app.min.js"></script>
+</body>
+
+</html>
