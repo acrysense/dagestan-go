@@ -256,7 +256,16 @@
 
 			myMap.controls.add(zoomControl);
 
-			var myPlacemark = new ymaps.Placemark([42.8938533, 47.6357219], {}, {
+			var myPlacemark = new ymaps.Placemark([42.8938533, 47.6357219], {
+				balloonContent: `
+                        <div class="custom-balloon">
+                            <h3 class="custom-balloon__title"><span>Мы находимся тут</span></h3>
+                        </div>
+                    `
+			}, {
+				balloonCloseButton: false,
+				hideIconOnBalloonOpen: false,
+				balloonOffset: [-235, -40],
 				iconLayout: 'default#image',
 				iconImageHref: 'img/icon-map-dot.svg',
 				iconImageSize: [48, 48],
@@ -264,6 +273,7 @@
 			});
 
 			myMap.geoObjects.add(myPlacemark);
+			myPlacemark.balloon.open();
 		}
 	</script>
 </body>

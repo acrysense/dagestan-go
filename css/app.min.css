@@ -1552,12 +1552,10 @@ svg {
   width: 100%;
 }
 .modal__application .application__wrap {
-  padding-top: 130px;
   min-height: calc(100dvh - 60px);
 }
 @media screen and (max-width: 743px) {
   .modal__application .application__wrap {
-    padding-top: 130px;
     min-height: calc(100dvh - 30px);
   }
 }
@@ -3392,8 +3390,28 @@ svg {
   position: relative;
   z-index: 1;
 }
-@media screen and (min-width: 1024px) {
-  .upcoming-tours__slider::before {
+@media screen and (min-width: 1281px) {
+  .upcoming-tours__slider {
+    overflow-x: clip;
+    margin: 0 calc(50% - 50vw + 30px);
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1280px) {
+  .upcoming-tours__slider {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1281px) {
+  .upcoming-tours__slider .swiper {
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    margin: 0 auto;
+    padding: 0 40px;
+    max-width: 1280px;
+    width: 100%;
+  }
+  .upcoming-tours__slider .swiper::before {
     content: "";
     position: absolute;
     top: -188px;
@@ -3406,11 +3424,6 @@ svg {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
-  }
-}
-@media screen and (min-width: 744px) and (max-width: 1280px) {
-  .upcoming-tours__slider {
-    padding: 0 40px;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -4627,7 +4640,7 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 210px 30px 120px;
+  padding: 80px 30px;
   min-height: 100svh;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
@@ -4783,7 +4796,7 @@ svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 210px 30px 120px;
+  padding: 90px 30px;
   min-height: 100svh;
   text-align: center;
   color: #FFFFFF;
@@ -4840,7 +4853,7 @@ svg {
   overflow: hidden;
   width: calc(100vw - 60px);
   height: calc(100% - 60px);
-  border-radius: 20px;
+  border-radius: 40px;
 }
 .not-found__bg::before {
   content: "";
@@ -4896,6 +4909,7 @@ svg {
   .not-found__bg {
     width: calc(100vw - 30px);
     height: calc(100% - 30px);
+    border-radius: 30px;
   }
   .not-found__bg::after {
     left: -415px;
@@ -4905,5 +4919,170 @@ svg {
             transform: none;
     width: 1869px;
     height: 436px;
+  }
+}
+
+.ymaps-2-1-79-copyrights-pane {
+  display: none !important;
+}
+
+.ymaps-2-1-79-balloon {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.ymaps-2-1-79-balloon__layout {
+  background: transparent !important;
+}
+
+.ymaps-2-1-79-balloon__content {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.ymaps-2-1-79-balloon__tail {
+  display: none !important;
+}
+
+.ymaps-2-1-79-float-button {
+  right: 0 !important;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+      -ms-flex-align: center !important;
+          align-items: center !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  padding: 0 !important;
+  min-width: 50px !important;
+  width: 50px !important;
+  height: 50px !important;
+  background: #FFFFFF;
+  border: none !important;
+  border-radius: 50% !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+.ymaps-2-1-79-zoom__minus {
+  top: 60px !important;
+}
+
+.ymaps-2-1-79-zoom__icon {
+  position: static !important;
+  display: block !important;
+  min-width: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  border: none !important;
+}
+
+.ymaps-2-1-79-zoom__plus .ymaps-2-1-79-zoom__icon {
+  background-image: url(../img/sprite.svg#icon-plus-black) !important;
+}
+
+.ymaps-2-1-79-zoom__minus .ymaps-2-1-79-zoom__icon {
+  background-image: url(../img/sprite.svg#icon-minus-black) !important;
+}
+
+.custom-balloon {
+  overflow: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 300px;
+  min-width: 300px;
+  min-height: 80px;
+}
+.custom-balloon__title {
+  max-width: 300px;
+  min-width: 300px;
+  width: 100%;
+}
+.custom-balloon__title span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  overflow: hidden;
+  padding: 22px 40px 28px;
+  margin-left: auto;
+  max-width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 40px 40px 20px 40px;
+}
+.custom-balloon__title span::before {
+  content: "08:56";
+  position: absolute;
+  right: 44px;
+  bottom: 9px;
+  z-index: 1;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  opacity: 0.4;
+}
+.custom-balloon__title span::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  bottom: 9px;
+  z-index: 1;
+  display: block;
+  width: 26px;
+  height: 20px;
+  background-image: url(../img/sprite.svg#icon-double-check);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.custom-balloon__title span + span {
+  margin-top: 10px;
+}
+@media screen and (max-width: 743px) {
+  .custom-balloon__title {
+    margin-top: auto;
+    margin-left: auto;
+    max-width: 189px;
+    min-width: 189px;
+  }
+  .custom-balloon__title span {
+    padding: 12.25px 27px 16.25px;
+    font-size: 15px;
+    border-radius: 30px 30px 16px 30px;
+  }
+  .custom-balloon__title span::before {
+    right: 32px;
+    bottom: 6px;
+    font-size: 10px;
+  }
+  .custom-balloon__title span::after {
+    right: 8px;
+    bottom: 6px;
+    width: 24px;
+    height: 13px;
+  }
+  .custom-balloon__title span + span {
+    margin-top: 7px;
   }
 }
