@@ -695,9 +695,6 @@ a:hover {
   text-decoration: none;
   color: #000000;
 }
-a:active {
-  color: #000000;
-}
 
 input[type=number] {
   -moz-appearance: textfield;
@@ -873,7 +870,9 @@ svg {
 
 .header {
   position: relative;
-  z-index: 500;
+  z-index: 600;
+  -webkit-transition: background 0.15s ease;
+  transition: background 0.15s ease;
 }
 .header--inner .header__wrapper {
   padding: 80px 0 50px;
@@ -918,6 +917,29 @@ svg {
 .header--white .hamburger__inner {
   background: #000000;
 }
+.header.is--menu {
+  background: #F5F5F5;
+  -webkit-transition: background 0.15s ease 0.2s;
+  transition: background 0.15s ease 0.2s;
+}
+.header.is--menu .header__logotype .default {
+  opacity: 1;
+}
+.header.is--menu .header__logotype .white {
+  opacity: 0;
+}
+.header.is--menu .header__link {
+  color: #000000;
+}
+.header.is--menu .header__link:hover {
+  color: #000000;
+}
+.header.is--menu .hamburger {
+  background: #000000;
+}
+.header.is--menu .hamburger__inner {
+  background: #FFFFFF;
+}
 .header__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -951,6 +973,8 @@ svg {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
 }
 .header__logotype .white {
   opacity: 0;
@@ -1045,8 +1069,40 @@ svg {
   width: -moz-fit-content;
   width: fit-content;
 }
+@media screen and (max-width: 1023px) {
+  .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .nav__item {
+    width: 100%;
+  }
+}
 .nav__item + .nav__item {
   margin-left: 40px;
+}
+@media screen and (max-width: 1023px) {
+  .nav__item + .nav__item {
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .nav__item + .nav__item {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .nav__item + .nav__item {
+    margin-top: 10px;
+  }
 }
 .nav__link {
   display: block;
@@ -1056,6 +1112,29 @@ svg {
   font-size: 19px;
   font-weight: 500;
   line-height: 1.2105263158;
+}
+@media screen and (max-width: 1023px) {
+  .nav__link {
+    width: 100%;
+    background: #FFFFFF;
+    border-radius: 20px;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .nav__link {
+    padding: 32.5px 30px;
+    font-size: 24px;
+    line-height: 1.2083333333;
+    letter-spacing: -0.04em;
+  }
+}
+@media screen and (max-width: 743px) {
+  .nav__link {
+    padding: 24px 30px;
+    font-size: 18px;
+    line-height: 1.2222222222;
+    letter-spacing: -0.04em;
+  }
 }
 
 .hamburger {
@@ -1077,6 +1156,18 @@ svg {
 .hamburger:focus {
   outline: none;
 }
+.hamburger.is--active .hamburger__inner:first-child {
+  top: 30px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.hamburger.is--active .hamburger__inner:last-child {
+  top: 30px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
 @media screen and (min-width: 1024px) {
   .hamburger {
     display: none;
@@ -1087,6 +1178,12 @@ svg {
     min-width: 40px;
     width: 40px;
     height: 40px;
+  }
+  .hamburger.is--active .hamburger__inner:first-child {
+    top: 19px;
+  }
+  .hamburger.is--active .hamburger__inner:last-child {
+    top: 19px;
   }
 }
 .hamburger__inner {
@@ -1323,6 +1420,202 @@ svg {
   line-height: 1.5555555556;
   text-align: center;
   letter-spacing: -0.01em;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 590;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 30px;
+  max-height: 100dvh;
+  width: 100%;
+  background: #F5F5F5;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu.is--active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.menu.is--active .menu__nav, .menu.is--active .menu__link {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease-in-out 0.2s;
+  transition: opacity 0.25s ease-in-out 0.2s;
+}
+@media screen and (max-width: 743px) {
+  .menu {
+    padding: 15px;
+  }
+}
+.menu__wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 163px 0 40px;
+  min-height: calc(100dvh - 60px);
+}
+@media screen and (max-width: 743px) {
+  .menu__wrap {
+    padding: 110px 0 40px;
+    min-height: calc(100dvh - 30px);
+  }
+}
+.menu__nav {
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+.menu__link {
+  display: block;
+  margin: 40px auto 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2222222222;
+  letter-spacing: -0.04em;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out;
+}
+@media screen and (min-width: 744px) {
+  .menu__link {
+    display: none;
+  }
+}
+.menu__link + .menu__link {
+  margin-top: 20px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3000;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  max-height: 100dvh;
+  background: #F5F5F5;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.modal.is--active {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+.modal__wrap {
+  position: relative;
+  z-index: 2;
+  -webkit-transform-origin: center top;
+      -ms-transform-origin: center top;
+          transform-origin: center top;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px auto;
+  min-height: calc(100dvh - 60px);
+  max-width: calc(100% - 60px);
+  width: 100%;
+}
+@media screen and (max-width: 743px) {
+  .modal__wrap {
+    margin: 15px auto;
+    min-height: calc(100dvh - 30px);
+    max-width: calc(100% - 30px);
+  }
+}
+.modal__application {
+  width: 100%;
+}
+.modal__application .application__wrap {
+  padding-top: 130px;
+  min-height: calc(100dvh - 60px);
+}
+@media screen and (max-width: 743px) {
+  .modal__application .application__wrap {
+    padding-top: 130px;
+    min-height: calc(100dvh - 30px);
+  }
+}
+.modal__application .application__bg {
+  height: 100%;
+}
+.modal__close-btn {
+  position: absolute;
+  top: 50px;
+  right: 40px;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+  min-width: 61px;
+  width: 61px;
+  height: 61px;
+  font-size: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.modal__close-btn > svg {
+  min-width: 61px;
+  width: 61px;
+  height: 61px;
+  color: #FFFFFF;
+}
+.modal__close-btn:focus {
+  outline: none;
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .modal__close-btn {
+    top: 40px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .modal__close-btn {
+    top: 30px;
+    right: 30px;
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .modal__close-btn > svg {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 .c-subscribe__form {
@@ -1801,6 +2094,11 @@ svg {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (max-width: 1023px) {
+  .main__bg {
+    min-height: 700px;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1199px) {
   .main__bg::after {
     right: -63px;
@@ -1811,7 +2109,7 @@ svg {
 }
 @media screen and (max-width: 743px) {
   .main__bg {
-    min-height: calc(100svh - 30px);
+    height: calc(100svh - 30px);
     border-radius: 30px;
   }
   .main__bg::after {
@@ -3054,6 +3352,11 @@ svg {
 .upcoming-tours__top {
   margin-bottom: 77px;
 }
+@media screen and (min-width: 1024px) and (max-width: 1339px) {
+  .upcoming-tours__top {
+    padding: 0 40px;
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .upcoming-tours__top {
     margin-bottom: 71px;
@@ -3086,10 +3389,78 @@ svg {
   }
 }
 .upcoming-tours__slider {
-  display: none;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (min-width: 1024px) {
+  .upcoming-tours__slider::before {
+    content: "";
+    position: absolute;
+    top: -188px;
+    right: -90px;
+    z-index: -1;
+    display: block;
+    width: 292px;
+    height: 292px;
+    background-image: url(../img/decor-fire.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1280px) {
+  .upcoming-tours__slider {
+    padding: 0 40px;
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
+  .upcoming-tours__slider .swiper {
+    margin: 0 -50px;
+    padding: 0 50px;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .upcoming-tours__slider .swiper {
+    margin: 0 -40px;
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .upcoming-tours__slider .swiper {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
+}
+.upcoming-tours__slider .swiper-slide {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+}
+.upcoming-tours__slide {
+  max-width: 590px;
+  min-width: 590px;
+  height: 100%;
+}
+@media screen and (min-width: 375px) and (max-width: 743px) {
+  .upcoming-tours__slide {
+    max-width: 339px;
+    min-width: 339px;
+  }
+}
+@media screen and (max-width: 374px) {
+  .upcoming-tours__slide {
+    max-width: 291px;
+    min-width: 291px;
+  }
 }
 .upcoming-tours__bottom {
   margin-top: 100px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1339px) {
+  .upcoming-tours__bottom {
+    padding: 0 40px;
+  }
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .upcoming-tours__bottom {
@@ -3151,6 +3522,8 @@ svg {
 }
 
 .upcoming-tours-card {
+  position: relative;
+  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3174,12 +3547,14 @@ svg {
 .upcoming-tours-card:hover {
   color: #FFFFFF;
 }
-@media screen and (hover: hover) {
-  .upcoming-tours-card:hover .upcoming-tours-card__top {
-    opacity: 1;
+@media screen and (min-width: 375px) and (max-width: 743px) {
+  .upcoming-tours-card {
+    padding: 32px 20px 40px 32px;
   }
-  .upcoming-tours-card:hover .upcoming-tours-card__body {
-    opacity: 1;
+}
+@media screen and (max-width: 374px) {
+  .upcoming-tours-card {
+    padding: 20px 10px 30px 20px;
   }
 }
 .upcoming-tours-card__top {
@@ -3193,7 +3568,6 @@ svg {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  opacity: 0;
 }
 .upcoming-tours-card__date {
   display: -webkit-box;
@@ -3202,7 +3576,7 @@ svg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 11px 15px;
+  padding: 11px 25px 11px 15px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -3226,6 +3600,17 @@ svg {
   background-size: contain;
   background-position: center center;
 }
+@media screen and (max-width: 743px) {
+  .upcoming-tours-card__date {
+    padding: 10.5px 25px 10.5px 15px;
+    font-size: 14px;
+  }
+  .upcoming-tours-card__date::before {
+    min-width: 18px;
+    width: 18px;
+    height: 18px;
+  }
+}
 .upcoming-tours-card__icon {
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -3235,10 +3620,20 @@ svg {
   height: 24px;
   color: #FFFFFF;
 }
+@media screen and (max-width: 743px) {
+  .upcoming-tours-card__icon {
+    display: none;
+  }
+}
 .upcoming-tours-card__body {
+  margin-top: 40px;
   max-width: 416px;
-  opacity: 0;
   width: 100%;
+}
+@media screen and (max-width: 743px) {
+  .upcoming-tours-card__body {
+    padding-left: 8px;
+  }
 }
 .upcoming-tours-card__details {
   display: -webkit-box;
@@ -3250,6 +3645,17 @@ svg {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+@media screen and (max-width: 743px) {
+  .upcoming-tours-card__details {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
 }
 .upcoming-tours-card__time {
   display: -webkit-box;
@@ -3305,6 +3711,40 @@ svg {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.04em;
+}
+.upcoming-tours-card__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.upcoming-tours-card__bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%, rgba(52, 52, 52, 0)), to(#343434)), -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 0.1)));
+  background: linear-gradient(180deg, rgba(52, 52, 52, 0) 40%, #343434 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+}
+.upcoming-tours-card__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .faq {
@@ -3963,9 +4403,14 @@ svg {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media screen and (max-width: 1023px) {
+  .about__bg {
+    min-height: 700px;
+  }
+}
 @media screen and (max-width: 743px) {
   .about__bg {
-    min-height: calc(100svh - 30px);
+    height: calc(100svh - 30px);
     border-radius: 30px;
   }
 }
@@ -4154,15 +4599,17 @@ svg {
   position: relative;
   z-index: 1;
   overflow: hidden;
+}
+.application--indent-top {
   margin-top: -192px;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
-  .application {
+  .application--indent-top {
     margin-top: -182px;
   }
 }
 @media screen and (max-width: 743px) {
-  .application {
+  .application--indent-top {
     margin-top: -130px;
   }
 }
@@ -4215,7 +4662,7 @@ svg {
   overflow: hidden;
   width: calc(100vw - 60px);
   height: calc(100% - 60px);
-  border-radius: 20px;
+  border-radius: 40px;
 }
 .application__bg::before {
   content: "";
@@ -4271,6 +4718,7 @@ svg {
   .application__bg {
     width: calc(100vw - 30px);
     height: calc(100% - 30px);
+    border-radius: 30px;
   }
   .application__bg::after {
     left: -256px;
