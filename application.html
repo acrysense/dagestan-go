@@ -21,6 +21,8 @@
 	<!-- styles -->
 	<link rel="stylesheet" href="libs/aos/aos.css">
 	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
+	<link rel="stylesheet" href="libs/nouislider/nouislider.min.css">
+	<link rel="stylesheet" href="libs/flatpickr/flatpickr.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
@@ -47,7 +49,7 @@
 								<a href="contacts.html" class="nav__link">Контакты</a>
 							</li>
 							<li class="nav__item">
-								<a href="application.html" class="nav__link">Связаться</a>
+								<a href="application.html modal-btn" data-id="modal-application">Связаться</a>
 							</li>
 						</ul>
 					</nav>
@@ -116,10 +118,43 @@
 		</div>
 	</div>
 	<!-- end of menu -->
+	<!-- modals -->
+	<div class="modal" id="modal-application">
+		<div class="modal__wrap">
+			<button class="modal__close-btn modal__close" aria-label="Закрыть">
+				<svg>
+					<use xlink:href="img/sprite.svg#icon-close"></use>
+				</svg>
+			</button>
+			<div class="application modal__application">
+				<div class="application__wrap">
+					<form action="#" class="application-form application__form">
+						<div class="input-field application-form__input">
+							<input type="text" class="input-field__input" placeholder="Имя">
+						</div>
+						<div class="input-field application-form__input">
+							<input type="text" class="input-field__input" placeholder="Телефон">
+						</div>
+						<div class="input-field application-form__input">
+							<textarea class="input-field__textarea" placeholder="Ваш вопрос"></textarea>
+						</div>
+						<button class="application-form__btn btn">Отправить</button>
+					</form>
+				</div>
+				<picture class="application__bg">
+					<img src="img/application-bg.jpg" alt="Image">
+				</picture>
+			</div>
+		</div>
+	</div>
+	<!-- end of modals -->
 	<!-- scripts -->
 	<script src="libs/inputmask/inputmask.min.js"></script>
 	<script src="libs/aos/aos.js"></script>
 	<script src="libs/swiper/swiper-bundle.min.js"></script>
+	<script src="libs/nouislider/nouislider.min.js"></script>
+	<script src="libs/flatpickr/flatpickr.min.js"></script>
+	<script src="libs/flatpickr/l10n/ru.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 

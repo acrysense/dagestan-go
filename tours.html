@@ -21,6 +21,8 @@
 	<!-- styles -->
 	<link rel="stylesheet" href="libs/aos/aos.css">
 	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
+	<link rel="stylesheet" href="libs/nouislider/nouislider.min.css">
+	<link rel="stylesheet" href="libs/flatpickr/flatpickr.min.css">
 	<link rel="stylesheet" href="css/app.min.css">
 </head>
 
@@ -110,7 +112,7 @@
 						</form>
 					</div>
 					<div class="tours__top">
-						<button class="tours__filter-trigger">
+						<button class="tours__filter-trigger" aria-label="Фильтр">
 							<svg>
 								<use xlink:href="img/sprite.svg#icon-filter"></use>
 							</svg>
@@ -129,7 +131,193 @@
 						</div>
 					</div>
 					<div class="tours__wrap">
-						<div class="tours__left"></div>
+						<div class="tours__left">
+							<div class="tours-filter tours__filter">
+								<div class="tours-filter__wrap">
+									<div class="tours-filter__main">
+										<div class="tours-filter__top">
+											<button class="tours-filter__close" aria-label="Закрыть">
+												<svg>
+													<use xlink:href="img/sprite.svg#icon-close"></use>
+												</svg>
+											</button>
+											<span class="tours-filter__heading">Фильтры</span>
+										</div>
+										<div class="tours-filter__group is--open">
+											<button class="tours-filter__trigger">
+												<span>Выберите даты</span>
+												<span class="tours-filter__trigger-icon">
+													<svg>
+														<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="tours-filter__holder" style="display: block;">
+												<div class="tours-filter__calendar">
+													<input type="text" id="add-date" class="calendar-dropdown-js tours-filter__date" placeholder="Дата выезда">
+												</div>
+											</div>
+										</div>
+										<div class="tours-filter__group">
+											<button class="tours-filter__trigger">
+												<span>Категории</span>
+												<span class="tours-filter__trigger-icon">
+													<svg>
+														<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="tours-filter__holder">
+												<div class="tours-filter__checkboxes">
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-categories-01" name="categories">
+														<label for="filter-categories-01" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Все туры</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-categories-02" name="categories">
+														<label for="filter-categories-02" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Экскурсии</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-categories-03" name="categories">
+														<label for="filter-categories-03" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Рекламные туры</span>
+														</label>
+													</div>
+													<button class="tours-filter__more">Раскрыть</button>
+												</div>
+											</div>
+										</div>
+										<div class="tours-filter__group">
+											<button class="tours-filter__trigger">
+												<span>Места посещения</span>
+												<span class="tours-filter__trigger-icon">
+													<svg>
+														<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="tours-filter__holder">
+												<div class="tours-filter__checkboxes">
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-places-01" name="places">
+														<label for="filter-places-01" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Грозный</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-places-02" name="places">
+														<label for="filter-places-02" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Сулакский каньон</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-places-03" name="places">
+														<label for="filter-places-03" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Дербент</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-places-04" name="places">
+														<label for="filter-places-04" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Сулакский каньон</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-places-05" name="places">
+														<label for="filter-places-05" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">Дербент</span>
+														</label>
+													</div>
+													<button class="tours-filter__more">Раскрыть</button>
+												</div>
+											</div>
+										</div>
+										<div class="tours-filter__group">
+											<button class="tours-filter__trigger">
+												<span>Длительность</span>
+												<span class="tours-filter__trigger-icon">
+													<svg>
+														<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="tours-filter__holder">
+												<div class="tours-filter__checkboxes">
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-duration-01" name="duration">
+														<label for="filter-duration-01" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">До 12 часов</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-duration-02" name="duration">
+														<label for="filter-duration-02" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">1 день</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-duration-03" name="duration">
+														<label for="filter-duration-03" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">2−4 дней</span>
+														</label>
+													</div>
+													<div class="square-checkbox tours-filter__checkbox">
+														<input type="checkbox" class="square-checkbox__input" id="filter-duration-04" name="duration">
+														<label for="filter-duration-04" class="square-checkbox__group">
+															<span class="square-checkbox__icon"></span>
+															<span class="square-checkbox__title">5-10 дней</span>
+														</label>
+													</div>
+													<button class="tours-filter__more">Раскрыть</button>
+												</div>
+											</div>
+										</div>
+										<div class="tours-filter__group">
+											<button class="tours-filter__trigger">
+												<span>Стоимость ₽</span>
+												<span class="tours-filter__trigger-icon">
+													<svg>
+														<use xlink:href="img/sprite.svg#icon-arrow-down"></use>
+													</svg>
+												</span>
+											</button>
+											<div class="tours-filter__holder">
+												<div class="tours-filter__range">
+													<div class="tours-filter__range-slider" data-range-start="0" data-range-end="30000" data-range-min="0" data-range-max="30000"></div>
+													<div class="range-field tours-filter__range-inputs">
+														<div class="range-field__group">
+															<input type="number" id="range-money-min" class="range-field__input range-field__input--min" placeholder="от">
+														</div>
+														<div class="range-field__group">
+															<input type="number" id="range-money-max" class="range-field__input range-field__input--max" placeholder="до">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="tours-filter__controls">
+										<a href="#" class="tours-filter__btn">Применить</a>
+										<a href="#" class="tours-filter__clear">Сбросить</a>
+									</div>
+								</div>
+							</div>
+						</div>
 						<div class="tours__right">
 							<div class="tours__wrapper">
 								<a href="#" class="tours-card tours__item">
@@ -371,10 +559,43 @@
 		</div>
 	</div>
 	<!-- end of menu -->
+	<!-- modals -->
+	<div class="modal" id="modal-application">
+		<div class="modal__wrap">
+			<button class="modal__close-btn modal__close" aria-label="Закрыть">
+				<svg>
+					<use xlink:href="img/sprite.svg#icon-close"></use>
+				</svg>
+			</button>
+			<div class="application modal__application">
+				<div class="application__wrap">
+					<form action="#" class="application-form application__form">
+						<div class="input-field application-form__input">
+							<input type="text" class="input-field__input" placeholder="Имя">
+						</div>
+						<div class="input-field application-form__input">
+							<input type="text" class="input-field__input" placeholder="Телефон">
+						</div>
+						<div class="input-field application-form__input">
+							<textarea class="input-field__textarea" placeholder="Ваш вопрос"></textarea>
+						</div>
+						<button class="application-form__btn btn">Отправить</button>
+					</form>
+				</div>
+				<picture class="application__bg">
+					<img src="img/application-bg.jpg" alt="Image">
+				</picture>
+			</div>
+		</div>
+	</div>
+	<!-- end of modals -->
 	<!-- scripts -->
 	<script src="libs/inputmask/inputmask.min.js"></script>
 	<script src="libs/aos/aos.js"></script>
 	<script src="libs/swiper/swiper-bundle.min.js"></script>
+	<script src="libs/nouislider/nouislider.min.js"></script>
+	<script src="libs/flatpickr/flatpickr.min.js"></script>
+	<script src="libs/flatpickr/l10n/ru.js"></script>
 	<script src="js/app.min.js"></script>
 </body>
 
