@@ -11,13 +11,12 @@
 	<meta property="og:url" content="/">
 	<meta property="og:site_name" content="GO DAGESTAN - Политика оператора в отношении обработки персональных данных">
 	<!-- favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-	<link rel="manifest" href="img/favicon/site.webmanifest">
-	<link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="theme-color" content="#ffffff">
+	<link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png" />
+	<meta name="apple-mobile-web-app-title" content="GO DAGESTAN - Политика оператора в отношении обработки персональных данных" />
+	<link rel="manifest" href="img/favicon/site.webmanifest" />
 	<!-- styles -->
 	<link rel="stylesheet" href="libs/aos/aos.css">
 	<link rel="stylesheet" href="libs/swiper/swiper.min.css">
@@ -230,30 +229,30 @@
 	</div>
 	<!-- end of menu -->
 	<!-- modals -->
-	<div class="modal" id="modal-application">
+	<div class="modal" id="modal-booking">
 		<div class="modal__wrap">
 			<button class="modal__close-btn modal__close" aria-label="Закрыть">
 				<svg>
 					<use xlink:href="img/sprite.svg#icon-close"></use>
 				</svg>
 			</button>
-			<div class="application modal__application">
-				<div class="application__wrap">
-					<form action="#" class="application-form application__form">
-						<div class="input-field application-form__input">
+			<div class="booking modal__booking">
+				<div class="booking__wrap">
+					<form action="#" class="booking-form booking__form">
+						<div class="input-field booking-form__input">
 							<input type="text" class="input-field__input" placeholder="Имя">
 						</div>
-						<div class="input-field application-form__input">
-							<input type="text" class="input-field__input" placeholder="Телефон">
+						<div class="input-field booking-form__input">
+							<input type="tel" class="input-field__input" placeholder="Телефон" data-inputmask="'mask': '+7 (999) 999-99-99'">
 						</div>
-						<div class="input-field application-form__input">
+						<div class="input-field booking-form__input">
 							<textarea class="input-field__textarea" placeholder="Ваш вопрос"></textarea>
 						</div>
-						<button class="application-form__btn btn">Отправить</button>
+						<button class="booking-form__btn btn">Отправить</button>
 					</form>
 				</div>
-				<picture class="application__bg">
-					<img src="img/application-bg.jpg" alt="Image">
+				<picture class="booking__bg">
+					<img src="img/booking-bg.jpg" alt="Image">
 				</picture>
 			</div>
 		</div>
