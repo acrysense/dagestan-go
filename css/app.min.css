@@ -2187,6 +2187,14 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 .modal__booking {
   width: 100%;
 }
+.modal__booking .booking__wrap {
+  min-height: calc(100dvh - 60px);
+}
+@media screen and (max-width: 743px) {
+  .modal__booking .booking__wrap {
+    min-height: calc(100dvh - 30px);
+  }
+}
 
 .popup {
   position: fixed;
@@ -8546,6 +8554,62 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 .booking__title {
   color: #F0F0F0;
+}
+.booking__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  color: #FFFFFF;
+}
+.booking__info {
+  max-width: 40%;
+}
+.booking__delimiter {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: auto 20px;
+  border-top: 2px dashed #0394CD;
+}
+@media screen and (max-width: 743px) {
+  .booking__delimiter {
+    margin: auto 10px;
+  }
+}
+.booking__text {
+  display: block;
+  margin-bottom: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+@media screen and (max-width: 743px) {
+  .booking__text {
+    margin-bottom: 3px;
+    font-size: 10px;
+  }
+}
+.booking__value {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+@media screen and (max-width: 743px) {
+  .booking__value {
+    font-size: 18px;
+  }
 }
 .booking__form {
   width: 100%;
