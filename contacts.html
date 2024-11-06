@@ -258,7 +258,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal" id="modal-booking">
+	<div class="modal is--activ" id="modal-booking">
 		<div class="modal__wrap">
 			<button class="modal__close-btn modal__close" aria-label="Закрыть">
 				<svg>
@@ -352,6 +352,24 @@
 
 			myMap.geoObjects.add(myPlacemark);
 			myPlacemark.balloon.open();
+
+			let ctrlPressed = false;
+
+			window.addEventListener('keydown', (e) => {
+				if (e.key === 'Control') {
+					ctrlPressed = true;
+					myMap.behaviors.enable('scrollZoom');
+				}
+			});
+
+			window.addEventListener('keyup', (e) => {
+				if (e.key === 'Control') {
+					ctrlPressed = false;
+					myMap.behaviors.disable('scrollZoom');
+				}
+			});
+
+			myMap.behaviors.disable('scrollZoom');
 		}
 	</script>
 </body>
