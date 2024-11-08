@@ -2841,10 +2841,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.main__heading span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .main__heading span + span {
   margin-top: 10px;
@@ -3497,10 +3503,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.services__heading span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .services__heading span + span {
   margin-top: 10px;
@@ -4783,10 +4795,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.faq__heading span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .faq__heading span + span {
   margin-top: 10px;
@@ -5336,10 +5354,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.about__heading span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .about__heading span + span {
   margin-top: 10px;
@@ -5559,10 +5583,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.contacts__address span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .contacts__address span + span {
   margin-top: 10px;
@@ -5760,10 +5790,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   display: block;
   width: 26px;
   height: 20px;
+  opacity: 0;
   background-image: url(../img/sprite.svg#icon-double-check);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.tours-main__heading span.aos-animate::after {
+  opacity: 1;
+  -webkit-transition: all 0.25s ease-in-out 0.4s;
+  transition: all 0.25s ease-in-out 0.4s;
 }
 .tours-main__heading span + span {
   margin-top: 10px;
