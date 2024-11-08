@@ -844,15 +844,15 @@ svg {
      -moz-appearance: none;
           appearance: none;
   display: block;
-  padding: 22.5px 40px;
+  padding: 21.5px 40px;
   width: 100%;
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.72px;
   color: #000000;
   background: #FFFFFF;
-  border: none;
+  border: 1px solid #FFFFFF;
   border-radius: 10px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -879,6 +879,14 @@ svg {
 }
 .input-field__input:focus, .input-field__textarea:focus {
   outline: none;
+  border-color: #000000;
+}
+@media screen and (max-width: 743px) {
+  .input-field__input, .input-field__textarea {
+    padding: 16.5px 25px;
+    font-size: 16px;
+    letter-spacing: -0.64px;
+  }
 }
 .input-field__textarea {
   overflow: hidden;
@@ -1621,9 +1629,9 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (hover: hover) {
   .header__btn:hover > svg {
-    -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 @media screen and (max-width: 743px) {
@@ -1833,6 +1841,11 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: fit-content;
   font-size: 19px;
   font-weight: 500;
+}
+@media screen and (hover: hover) {
+  .footer__feedback:hover {
+    opacity: 0.5;
+  }
 }
 @media screen and (max-width: 1023px) {
   .footer__feedback {
@@ -2178,9 +2191,26 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 .modal__close-btn:focus {
   outline: none;
 }
+.modal__close-btn--black > svg {
+  color: #000000;
+}
+.modal__close-btn--back {
+  top: 0;
+  right: 0;
+}
+@media screen and (hover: hover) {
+  .modal__close-btn:hover > svg {
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+}
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .modal__close-btn {
     top: 40px;
+  }
+  .modal__close-btn--back {
+    top: 0;
   }
 }
 @media screen and (max-width: 743px) {
@@ -2195,6 +2225,10 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     min-width: 40px;
     width: 40px;
     height: 40px;
+  }
+  .modal__close-btn--back {
+    top: 0;
+    right: 0;
   }
 }
 .modal__application {
@@ -2431,9 +2465,9 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (hover: hover) {
   .c-subscribe__btn:hover > svg {
-    -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
   }
 }
 
@@ -2859,8 +2893,6 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: 100%;
   min-height: 600px;
   height: calc(100svh - 60px);
-  -o-object-fit: cover;
-     object-fit: cover;
   background: #FFFFFF;
   border-radius: 40px;
 }
@@ -2891,8 +2923,10 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   background-size: contain;
   background-position: bottom center;
 }
+.main__bg video,
 .main__bg img {
   display: block;
+  min-width: 100%;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -3843,7 +3877,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: normal;
   letter-spacing: -0.04em;
   text-align: right;
   opacity: 0.4;
@@ -4280,35 +4314,24 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: fit-content;
   height: auto;
 }
-.upcoming-tours__slider .swiper-slide .upcoming-tours-card__description {
-  max-height: 0;
+.upcoming-tours__slider .swiper-slide .upcoming-tours-card__top, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__details, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__description, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__price {
+  opacity: 0;
+  -webkit-transform: translateY(5px);
+      -ms-transform: translateY(5px);
+          transform: translateY(5px);
 }
-.upcoming-tours__slider .swiper-slide .upcoming-tours-card__price {
-  max-height: 0;
-}
-.upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__description {
-  max-height: 135px;
-}
-.upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__price {
-  max-height: 30px;
+.upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__top, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__details, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__description, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__price {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
 }
 .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__bg::before {
   opacity: 1;
 }
-@media screen and (min-width: 1058px) {
-  .upcoming-tours__slider .swiper-slide-active + .swiper-slide-next:last-child .upcoming-tours-card__description {
-    max-height: 135px;
-  }
-  .upcoming-tours__slider .swiper-slide-active + .swiper-slide-next:last-child .upcoming-tours-card__price {
-    max-height: 30px;
-  }
-  .upcoming-tours__slider .swiper-slide-active + .swiper-slide-next:last-child .upcoming-tours-card__bg::before {
-    opacity: 1;
-  }
-}
 .upcoming-tours__slide {
-  max-width: 590px;
-  min-width: 590px;
+  max-width: 520px;
+  min-width: 520px;
   height: 100%;
 }
 @media screen and (min-width: 375px) and (max-width: 743px) {
@@ -4405,27 +4428,24 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
           justify-content: space-between;
   overflow: hidden;
   padding: 32px;
-  min-height: 670px;
+  min-height: 620px;
   color: #FFFFFF;
+  background-image: radial-gradient(109.47% 115.35% at 107.88% -9.19%, #F7872B 0%, #F5F5F5 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-  background: #eee;
   border-radius: 20px;
 }
 .upcoming-tours-card:hover {
   color: #FFFFFF;
 }
 @media screen and (hover: hover) {
-  .upcoming-tours-card:hover .upcoming-tours-card__bg::before {
-    opacity: 1;
-  }
   .upcoming-tours-card:hover .upcoming-tours-card__bg img {
-    -webkit-transform: scale(1.15);
-        -ms-transform: scale(1.15);
-            transform: scale(1.15);
-    -webkit-transition: all 0.45s ease-in-out;
-    transition: all 0.45s ease-in-out;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.1, 1);
+    transition: all 0.25s cubic-bezier(0.2, 0, 0.1, 1);
   }
 }
 @media screen and (min-width: 375px) and (max-width: 743px) {
@@ -4449,6 +4469,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
+  -webkit-transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 .upcoming-tours-card__date {
   display: -webkit-box;
@@ -4508,12 +4530,14 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 .upcoming-tours-card__body {
   margin-top: 40px;
+  margin-left: 8px;
+  margin-bottom: 8px;
   max-width: 416px;
   width: 100%;
 }
 @media screen and (max-width: 743px) {
   .upcoming-tours-card__body {
-    padding-left: 8px;
+    margin-bottom: 0;
   }
 }
 .upcoming-tours-card__details {
@@ -4526,6 +4550,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 @media screen and (max-width: 743px) {
   .upcoming-tours-card__details {
@@ -4586,8 +4612,8 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   line-height: 1.5;
   letter-spacing: -0.01em;
   text-overflow: ellipsis;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out;
 }
 .upcoming-tours-card__price {
   display: block;
@@ -4599,8 +4625,41 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   font-size: 24px;
   font-weight: 500;
   letter-spacing: -0.04em;
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out;
+}
+.upcoming-tours-card__info {
+  margin-top: auto;
+  margin-left: 12px;
+  margin-bottom: 14px;
+  max-width: 363px;
+  width: 100%;
+  color: #000000;
+}
+@media screen and (max-width: 743px) {
+  .upcoming-tours-card__info {
+    max-width: calc(100% - 12px);
+  }
+}
+.upcoming-tours-card__subtitle {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  -webkit-transition: all 0.55s ease-in-out;
+  transition: all 0.55s ease-in-out;
+}
+.upcoming-tours-card__btn {
+  margin-top: 72px;
+  min-width: 256px;
 }
 .upcoming-tours-card__bg {
   position: absolute;
@@ -6964,11 +7023,11 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (hover: hover) {
   .tours-card:hover .tours-card__img img {
-    -webkit-transform: scale(1.15);
-        -ms-transform: scale(1.15);
-            transform: scale(1.15);
-    -webkit-transition: all 0.45s ease-in-out;
-    transition: all 0.45s ease-in-out;
+    -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+            transform: scale(1.05);
+    -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.1, 1);
+    transition: all 0.25s cubic-bezier(0.2, 0, 0.1, 1);
   }
 }
 .tours-card__img {
@@ -7435,6 +7494,16 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 .tour-category__slider .swiper-button-prev:focus,
 .tour-category__slider .swiper-button-next:focus {
   outline: none;
+}
+@media screen and (hover: hover) {
+  .tour-category__slider .swiper-button-prev:hover,
+  .tour-category__slider .swiper-button-next:hover {
+    background: #000000;
+  }
+  .tour-category__slider .swiper-button-prev:hover .swiper-button-icon,
+  .tour-category__slider .swiper-button-next:hover .swiper-button-icon {
+    color: #FFFFFF;
+  }
 }
 @media screen and (max-width: 743px) {
   .tour-category__slider .swiper-button-prev,
@@ -8750,19 +8819,20 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: calc(100vw - 60px);
   height: 100%;
   background: linear-gradient(252.76deg, #385992 -0.22%, #000000 96.73%);
-  border-radius: 40px;
+  border-radius: 40px 270px 40px 40px;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .booking::before {
     background: linear-gradient(180.86deg, #385992 0.59%, #000000 44.17%);
+    border-radius: 40px 240px 40px 40px;
   }
 }
 @media screen and (max-width: 743px) {
   .booking::before {
-    width: 100vw;
+    width: calc(100vw - 30px);
     background: -webkit-gradient(linear, left top, left bottom, color-stop(2.92%, #385992), color-stop(106.24%, #000000));
     background: linear-gradient(180deg, #385992 2.92%, #000000 106.24%);
-    border-radius: 20px;
+    border-radius: 30px 170px 45px 45px;
   }
 }
 .booking__wrap {
@@ -8779,28 +8849,29 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 80px 30px;
+  padding: 50px 30px;
   min-height: 100svh;
 }
 @media screen and (min-width: 744px) and (max-width: 1023px) {
   .booking__wrap {
-    padding: 180px 30px;
+    padding: 84px 30px 30px;
   }
 }
 @media screen and (max-width: 743px) {
   .booking__wrap {
-    padding: 160px 10px;
+    padding: 70px 10px 10px;
   }
 }
 .booking__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1399px) {
   .booking__wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -8808,30 +8879,197 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
             flex-direction: column;
   }
 }
+@media screen and (max-width: 743px) {
+  .booking__wrapper {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+}
 .booking__left {
   max-width: 546px;
   width: 100%;
 }
-.booking__right {
-  max-width: 591px;
-}
-@media screen and (max-width: 1023px) {
-  .booking__right {
+@media screen and (max-width: 1399px) {
+  .booking__left {
     max-width: none;
   }
 }
+.booking__right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 20px;
+  max-width: 591px;
+  width: 100%;
+}
+@media screen and (max-width: 1399px) {
+  .booking__right {
+    margin-left: 0;
+    max-width: none;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1399px) {
+  .booking__right {
+    margin-top: 42px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .booking__right {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    margin-top: 20px;
+  }
+}
 .booking__title {
+  display: block;
+  margin: 0 auto 80px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -2.4px;
+  text-align: center;
   color: #F0F0F0;
 }
-.booking__top {
+@media screen and (min-width: 744px) and (max-width: 1199px) {
+  .booking__title {
+    margin-bottom: 38px;
+    max-width: 440px;
+    width: 100%;
+    font-size: 50px;
+    letter-spacing: -2px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .booking__title {
+    margin-bottom: 38px;
+    max-width: 260px;
+    width: 100%;
+    font-size: 30px;
+    letter-spacing: -1.2px;
+  }
+}
+.booking__heading {
+  display: block;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.booking__heading span {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 19px 40px 24px;
+  margin-left: auto;
+  max-width: calc(100vw - 100px);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #000000;
+  background: #FFFFFF;
+  border-radius: 40px 40px 20px 40px;
+}
+.booking__heading span::before {
+  content: "08:56";
+  position: absolute;
+  right: 44px;
+  bottom: 9px;
+  z-index: 1;
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  opacity: 0.4;
+}
+.booking__heading span::after {
+  content: "";
+  position: absolute;
+  right: 11px;
+  bottom: 9px;
+  z-index: 1;
+  display: block;
+  width: 26px;
+  height: 20px;
+  background-image: url(../img/sprite.svg#icon-double-check);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+.booking__heading span + span {
+  margin-top: 10px;
+}
+@media screen and (max-width: 1399px) {
+  .booking__heading {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1199px) {
+  .booking__heading span {
+    padding: 19.25px 40px 24.25px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .booking__heading span {
+    padding: 12.25px 27px 16.25px;
+    max-width: calc(100vw - 60px);
+    font-size: 30px;
+    border-radius: 30px 30px 16px 30px;
+  }
+  .booking__heading span::before {
+    right: 32px;
+    bottom: 6px;
+    font-size: 10px;
+  }
+  .booking__heading span::after {
+    right: 8px;
+    bottom: 6px;
+    width: 24px;
+    height: 13px;
+  }
+  .booking__heading span + span {
+    margin-top: 7px;
+  }
+}
+.booking__top-info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 100%;
+  padding: 0 48px 0 58px;
   color: #FFFFFF;
+}
+@media screen and (max-width: 1399px) {
+  .booking__top-info {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 486px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 743px) {
+  .booking__top-info {
+    padding: 0 23px;
+  }
 }
 .booking__info {
   max-width: 40%;
@@ -8841,7 +9079,7 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   margin: auto 20px;
-  border-top: 2px dashed #0394CD;
+  border-top: 2px dashed #FFFFFF;
 }
 @media screen and (max-width: 743px) {
   .booking__delimiter {
@@ -8880,7 +9118,35 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   }
 }
 .booking__form {
+  margin-top: 50px;
+  margin-left: auto;
   width: 100%;
+}
+@media screen and (min-width: 1024px) and (max-width: 1399px) {
+  .booking__form {
+    margin: 48px auto 0;
+    max-width: 591px;
+  }
+}
+@media screen and (min-width: 744px) and (max-width: 1023px) {
+  .booking__form {
+    margin-top: 48px;
+  }
+}
+@media screen and (max-width: 743px) {
+  .booking__form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    margin-top: 20px;
+  }
 }
 
 .booking-form__input {
@@ -8901,9 +9167,13 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 @media screen and (max-width: 743px) {
   .booking-form__inner {
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    margin-top: 60px;
   }
 }
 .booking-form__btn {
@@ -8911,8 +9181,27 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 }
 @media screen and (max-width: 743px) {
   .booking-form__btn {
+    margin-top: auto;
     min-width: auto;
     width: 100%;
+  }
+}
+.booking-form__price {
+  display: block;
+  margin-left: 30px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -1.28px;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 743px) {
+  .booking-form__price {
+    margin: 0 auto 60px;
+    font-size: 24px;
+    letter-spacing: -0.96px;
   }
 }
 
@@ -9107,6 +9396,20 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
 
 .ymaps-2-1-79-balloon__tail {
   display: none !important;
+}
+
+.ymaps-2-1-79-zoom {
+  position: fixed !important;
+  top: 50% !important;
+  right: 15px !important;
+  -webkit-transform: translateY(-50%) !important;
+      -ms-transform: translateY(-50%) !important;
+          transform: translateY(-50%) !important;
+  display: block !important;
+  padding: 0 !important;
+  min-width: 50px !important;
+  width: 50px !important;
+  height: 110px !important;
 }
 
 .ymaps-2-1-79-float-button {

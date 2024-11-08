@@ -71,9 +71,11 @@
 							<span>Путешествие</span>
 							<span>которое</span>
 						</h1>
-						<video class="main__bg" poster="img/main-bg.jpg" loop autoplay muted playsinline>
-							<source src="video/main-bg.mp4" type="video/mp4">
-						</video>
+						<div class="main__bg">
+							<video poster="img/main-bg.jpg" loop autoplay muted playsinline>
+								<source src="video/main-bg.mp4" type="video/mp4">
+							</video>
+						</div>
 					</div>
 					<div class="main__content">
 						<h2>
@@ -88,7 +90,7 @@
 			<div class="types-tour" id="types-tour">
 				<div class="container">
 					<div class="types-tour__wrapper">
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Активные туры</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -105,7 +107,7 @@
 								</picture>
 							</a>
 						</article>
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Природные маршруты</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -122,7 +124,7 @@
 								</picture>
 							</a>
 						</article>
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Исторические экскурсии</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -139,7 +141,7 @@
 								</picture>
 							</a>
 						</article>
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Гастрономические туры</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -156,7 +158,7 @@
 								</picture>
 							</a>
 						</article>
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Культурные туры</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -173,7 +175,7 @@
 								</picture>
 							</a>
 						</article>
-						<article class="types-tour-card types-tour__item">
+						<article class="types-tour-card types-tour__item" data-aos="fade-up">
 							<h3 class="types-tour-card__title">Семейные экскурсии</h3>
 							<a href="#" class="types-tour-card__wrap">
 								<div class="types-tour-card__wrap-inner">
@@ -481,15 +483,23 @@
 										</picture>
 									</a>
 								</div>
+								<div class="swiper-slide">
+									<div class="upcoming-tours-card upcoming-tours__slide">
+										<div class="upcoming-tours-card__info">
+											<span class="upcoming-tours-card__subtitle">Выберите тур по душе и отправляйтесь в захватывающее путешествие по Дагестану!</span>
+											<a href="tours.hml" class="upcoming-tours-card__btn btn">Все туры</a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="upcoming-tours__bottom">
-						<div class="upcoming-tours__content">
-							<p>Выберите тур по душе и отправляйтесь <br>в захватывающее путешествие по Дагестану!</p>
-						</div>
-						<a href="#" class="upcoming-tours__btn btn">Все туры</a>
-					</div>
+					<!-- <div class="upcoming-tours__bottom">
+                        <div class="upcoming-tours__content">
+                            <p>Выберите тур по душе и отправляйтесь <br>в захватывающее путешествие по Дагестану!</p>
+                        </div>
+                        <a href="#" class="upcoming-tours__btn btn">Все туры</a>
+                    </div> -->
 				</div>
 			</section>
 			<!-- end of upcoming tours -->
@@ -809,46 +819,53 @@
 			</div>
 		</div>
 	</div>
-	<div class="modal is--activ" id="modal-booking">
+	<div class="modal" id="modal-booking">
 		<div class="modal__wrap">
-			<button class="modal__close-btn modal__close" aria-label="Закрыть">
+			<button class="modal__close-btn modal__close-btn--black modal__close-btn--back modal__close" aria-label="Закрыть">
 				<svg>
-					<use xlink:href="img/sprite.svg#icon-close"></use>
+					<use xlink:href="img/sprite.svg#icon-arrow-back"></use>
 				</svg>
 			</button>
 			<div class="booking modal__booking">
 				<div class="booking__wrap">
-					<h2 class="booking__title">Забронируйте свой тур</h2>
-					<div class="booking__top">
-						<div class="booking__top-info">
-							<div class="booking__info">
-								<span class="booking__text">Вторник, 07:00</span>
-								<span class="booking__value">24.09.2024</span>
-								<span class="booking__help">Махачкала</span>
+					<span class="booking__title">Забронируйте свой тур</span>
+					<div class="booking__wrapper">
+						<div class="booking__left">
+							<span class="booking__heading">
+								<span>Сулакский каньон <br>и барханы Сарыкум</span>
+							</span>
+						</div>
+						<div class="booking__right">
+							<div class="booking__top-info">
+								<div class="booking__info">
+									<span class="booking__text">Вторник, 07:00</span>
+									<span class="booking__value">24.09.2024</span>
+									<span class="booking__help">Махачкала</span>
+								</div>
+								<span class="booking__delimiter"></span>
+								<div class="booking__info">
+									<span class="booking__text">Вторник</span>
+									<span class="booking__value">24.09.2024</span>
+									<span class="booking__help">Махачкала</span>
+								</div>
 							</div>
-							<span class="booking__delimiter"></span>
-							<div class="booking__info">
-								<span class="booking__text">Вторник</span>
-								<span class="booking__value">24.09.2024</span>
-								<span class="booking__help">Махачкала</span>
-							</div>
+							<form action="#" class="booking-form booking__form">
+								<div class="input-field booking-form__input">
+									<input type="text" class="input-field__input" placeholder="ФИО">
+								</div>
+								<div class="input-field booking-form__input">
+									<input type="email" class="input-field__input" placeholder="Email">
+								</div>
+								<div class="input-field booking-form__input">
+									<input type="tel" class="input-field__input" placeholder="Телефон" data-inputmask="'mask': '+7 (999) 999-99-99'">
+								</div>
+								<div class="booking-form__inner">
+									<button class="booking-form__btn btn btn--blue">Забронировать</button>
+									<span class="booking-form__price">7 500 ₽</span>
+								</div>
+							</form>
 						</div>
 					</div>
-					<form action="#" class="booking-form booking__form">
-						<div class="input-field booking-form__input">
-							<input type="text" class="input-field__input" placeholder="ФИО">
-						</div>
-						<div class="input-field booking-form__input">
-							<input type="email" class="input-field__input" placeholder="Email">
-						</div>
-						<div class="input-field booking-form__input">
-							<input type="tel" class="input-field__input" placeholder="Телефон" data-inputmask="'mask': '+7 (999) 999-99-99'">
-						</div>
-						<div class="booking-form__inner">
-							<button class="booking-form__btn btn btn--blue">Забронировать</button>
-							<span class="booking-form__price">7 500 ₽</span>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>
