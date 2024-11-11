@@ -741,7 +741,7 @@
 					<div class="c-subscribe footer__subscribe">
 						<form action="#" class="c-subscribe__form">
 							<input type="text" class="c-subscribe__input" placeholder="Подписаться на новости (e-mail)">
-							<button class="c-subscribe__btn" aria-label="Отправить">
+							<button class="c-subscribe__btn popup-btn" data-id="popup-subscribe-success" aria-label="Отправить">
 								<svg>
 									<use xlink:href="img/sprite.svg#icon-plus"></use>
 								</svg>
@@ -881,7 +881,7 @@
 				</picture>
 				<span class="popup__title">Спасибо за подписку</span>
 				<span class="popup__description">Вы успешно подписались на нашу рассылку. Пожалуйста, подтвердите свой email, пройдя по ссылке в письме, которое мы отправили вам.</span>
-				<button class="popup__btn btn">Хорошо</button>
+				<button class="popup__btn popup__close btn">Хорошо</button>
 			</div>
 		</div>
 	</div>
@@ -893,7 +893,7 @@
 				</picture>
 				<span class="popup__title">Произошла ошибка</span>
 				<span class="popup__description">Что-то пошло не так. Пожалуйста, попробуйте подписаться позже или свяжитесь с нашей службой поддержки.</span>
-				<button class="popup__btn btn">Попробовать еще</button>
+				<button class="popup__btn popup__close btn">Попробовать еще</button>
 			</div>
 		</div>
 	</div>
@@ -905,7 +905,7 @@
 				</picture>
 				<span class="popup__title">Подписка подтверждена!</span>
 				<span class="popup__description">Спасибо за подтверждение подписки! <br>Вы теперь будете получать наши рассылки и эксклюзивные материалы прямо на ваш email.</span>
-				<button class="popup__btn btn">Хорошо</button>
+				<button class="popup__btn popup__close btn">Хорошо</button>
 			</div>
 		</div>
 	</div>
@@ -917,7 +917,7 @@
 				</picture>
 				<span class="popup__title">Подтверждение не удалось</span>
 				<span class="popup__description">Кажется, возникла ошибка при подтверждении подписки. Попробуйте еще раз или свяжитесь с нашей поддержкой для решения проблемы.</span>
-				<button class="popup__btn btn">Попробовать еще</button>
+				<button class="popup__btn popup__close btn">Попробовать еще</button>
 			</div>
 		</div>
 	</div>
