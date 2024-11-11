@@ -839,6 +839,16 @@ svg {
   }
 }
 
+.input-field.is--error .input-field__input, .input-field.is--error .input-field__textarea {
+  color: #F7872B;
+  border-color: #F7872B;
+}
+.input-field.is--error .input-field__input:focus, .input-field.is--error .input-field__textarea:focus {
+  border-color: #F7872B;
+}
+.input-field.is--error .input-field__error {
+  display: block;
+}
 .input-field__input, .input-field__textarea {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -892,6 +902,24 @@ svg {
   overflow: hidden;
   resize: none;
   min-height: 153px;
+}
+.input-field__error {
+  display: none;
+  margin-top: 5px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.14px;
+  color: #F7872B;
+}
+@media screen and (max-width: 743px) {
+  .input-field__error {
+    font-size: 12px;
+    letter-spacing: -0.12px;
+  }
 }
 
 .range-field {

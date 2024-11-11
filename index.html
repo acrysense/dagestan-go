@@ -649,14 +649,20 @@
 						</div>
 						<div class="feedback__right">
 							<form action="#" class="feedback-form feedback__form">
+								<!-- add class 'is--error' for visible error -->
 								<div class="input-field feedback-form__input">
 									<input type="text" class="input-field__input" placeholder="Имя">
+									<span class="input-field__error">Имя введено неверно!</span>
 								</div>
+								<!-- add class 'is--error' for visible error -->
 								<div class="input-field feedback-form__input">
 									<input type="text" class="input-field__input" placeholder="Телефон">
+									<span class="input-field__error">Телефон введен неверно!</span>
 								</div>
+								<!-- add class 'is--error' for visible error -->
 								<div class="input-field feedback-form__input">
 									<textarea class="input-field__textarea" placeholder="Ваш вопрос"></textarea>
+									<span class="input-field__error">Вопрос введен неверно!</span>
 								</div>
 								<span class="feedback-form__copyright">Нажимая на кнопку «Отправить», я даю <br>своё согласие на <a href="#">обработку персональных данных</a></span>
 								<button class="feedback-form__btn btn btn--blue">Отправить</button>
