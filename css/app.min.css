@@ -839,12 +839,31 @@ svg {
   }
 }
 
+.input-field {
+  position: relative;
+  z-index: 1;
+}
 .input-field.is--error .input-field__input, .input-field.is--error .input-field__textarea {
   color: #F7872B;
-  border-color: #F7872B;
+  background: #FEEBDB;
+}
+.input-field.is--error .input-field__input::-webkit-input-placeholder, .input-field.is--error .input-field__textarea::-webkit-input-placeholder {
+  color: #F7872B;
+}
+.input-field.is--error .input-field__input::-moz-placeholder, .input-field.is--error .input-field__textarea::-moz-placeholder {
+  color: #F7872B;
+}
+.input-field.is--error .input-field__input:-ms-input-placeholder, .input-field.is--error .input-field__textarea:-ms-input-placeholder {
+  color: #F7872B;
+}
+.input-field.is--error .input-field__input::-ms-input-placeholder, .input-field.is--error .input-field__textarea::-ms-input-placeholder {
+  color: #F7872B;
+}
+.input-field.is--error .input-field__input::placeholder, .input-field.is--error .input-field__textarea::placeholder {
+  color: #F7872B;
 }
 .input-field.is--error .input-field__input:focus, .input-field.is--error .input-field__textarea:focus {
-  border-color: #F7872B;
+  background: #FEEBDB;
 }
 .input-field.is--error .input-field__error {
   display: block;
@@ -854,7 +873,7 @@ svg {
      -moz-appearance: none;
           appearance: none;
   display: block;
-  padding: 21.5px 40px;
+  padding: 22.5px 90px 22.5px 30px;
   width: 100%;
   font-size: 18px;
   font-weight: 500;
@@ -862,7 +881,7 @@ svg {
   letter-spacing: -0.72px;
   color: #000000;
   background: #FFFFFF;
-  border: 1px solid #FFFFFF;
+  border: none;
   border-radius: 10px;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -889,11 +908,11 @@ svg {
 }
 .input-field__input:focus, .input-field__textarea:focus {
   outline: none;
-  border-color: #000000;
+  background: #D9E1F8;
 }
 @media screen and (max-width: 743px) {
   .input-field__input, .input-field__textarea {
-    padding: 16.5px 25px;
+    padding: 17.5px 25px;
     font-size: 16px;
     letter-spacing: -0.64px;
   }
@@ -904,8 +923,15 @@ svg {
   min-height: 153px;
 }
 .input-field__error {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  z-index: 1;
+  -webkit-transform: translate(0, -50%);
+      -ms-transform: translate(0, -50%);
+          transform: translate(0, -50%);
   display: none;
-  margin-top: 5px;
+  padding-left: 10px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -914,11 +940,35 @@ svg {
   line-height: 1.5;
   letter-spacing: -0.14px;
   color: #F7872B;
+  background: #FEEBDB;
+}
+.input-field__error > svg {
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+  color: #F7872B;
+}
+.input-field__error > * + * {
+  margin-left: 13px;
+}
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+  .input-field__error > span {
+    display: none;
+  }
+  .input-field__error > * + * {
+    margin-left: 0;
+  }
 }
 @media screen and (max-width: 743px) {
   .input-field__error {
     font-size: 12px;
     letter-spacing: -0.12px;
+  }
+  .input-field__error > span {
+    display: none;
+  }
+  .input-field__error > * + * {
+    margin-left: 0;
   }
 }
 
