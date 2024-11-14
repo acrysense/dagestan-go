@@ -5782,13 +5782,24 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   .tours-main__top {
     bottom: 301px;
     left: 50%;
+    max-width: calc(100vw - 120px);
+    width: 100%;
   }
 }
 @media screen and (max-width: 743px) {
   .tours-main__top {
     bottom: 240px;
     left: 50%;
+    max-width: calc(100vw - 60px);
+    width: 100%;
   }
+}
+.tours-main__top-inner {
+  margin: 0 auto;
+  max-width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .tours-main__tag {
   display: -webkit-box;
@@ -5834,14 +5845,6 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
     width: 18px;
     height: 18px;
   }
-}
-.tours-main__heading {
-  min-width: -webkit-max-content;
-  min-width: -moz-max-content;
-  min-width: max-content;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 .tours-main__heading span {
   position: relative;
@@ -5900,15 +5903,21 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   margin-top: 10px;
 }
 @media screen and (min-width: 744px) and (max-width: 1199px) {
+  .tours-main__heading {
+    max-width: calc(100vw - 120px);
+  }
   .tours-main__heading span {
     padding: 19.25px 40px 24.25px;
     font-size: 50px;
   }
 }
 @media screen and (max-width: 743px) {
+  .tours-main__heading {
+    max-width: calc(100vw - 60px);
+  }
   .tours-main__heading span {
     padding: 12.25px 27px 16.25px;
-    max-width: calc(100vw - 60px);
+    max-width: 100%;
     font-size: 30px;
     border-radius: 30px 30px 16px 30px;
   }
