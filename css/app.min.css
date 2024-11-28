@@ -4476,21 +4476,6 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   width: fit-content;
   height: auto;
 }
-.upcoming-tours__slider .swiper-slide .upcoming-tours-card__top, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__details, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__description, .upcoming-tours__slider .swiper-slide .upcoming-tours-card__price {
-  opacity: 0;
-  -webkit-transform: translateY(5px);
-      -ms-transform: translateY(5px);
-          transform: translateY(5px);
-}
-.upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__top, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__details, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__description, .upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__price {
-  opacity: 1;
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
-}
-.upcoming-tours__slider .swiper-slide-active .upcoming-tours-card__bg::before {
-  opacity: 1;
-}
 .upcoming-tours__slide {
   max-width: 520px;
   min-width: 520px;
@@ -4861,11 +4846,6 @@ span.flatpickr-weekday:last-child, span.flatpickr-weekday:nth-last-child(2) {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   will-change: transform;
-}
-@media screen and (hover: hover) {
-  .upcoming-tours-card__bg::before {
-    opacity: 0;
-  }
 }
 
 .faq {
